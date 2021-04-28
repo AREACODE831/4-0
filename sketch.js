@@ -6,11 +6,15 @@ let cnv;
 let points = 0;
 let w = 600;
 let h = 600;
+let player;
 
 function setup() {
   cnv = createCanvas(w, h);
 
   textFont('Futura');
+
+  player = new Player();
+
 }
 
 function draw() {
@@ -65,7 +69,9 @@ function titleMouseClicked() {
 
 function level1() {
   background(107, 242, 217);
-  text('click for points', w/2, h - 30);
+  //text('click for points', w/2, h - 30);
+
+  player.display();
 }
 
 function level1MouseClicked() {
@@ -76,7 +82,6 @@ function level1MouseClicked() {
   if (points >= 10){
     state = 'you win';
   }
-
 }
 
 function youWin(){
