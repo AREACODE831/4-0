@@ -35,7 +35,7 @@ function draw() {
       cnv.mouseClicked(youWinMouseClicked);
       break;
     default:
-    break;
+      break;
   }
 
   // if (state === 'title') {
@@ -50,16 +50,16 @@ function draw() {
   // }
 }
 
-function keyPressed(){
-  if (keyCode == LEFT_ARROW){
+function keyPressed() {
+  if (keyCode == LEFT_ARROW) {
     player.direction = 'left'
-  } else if (keyCode == RIGHT_ARROW){
+  } else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'
-  }else if (keyCode == UP_ARROW){
+  } else if (keyCode == UP_ARROW) {
     player.direction = 'up'
-  }else if (keyCode == DOWN_ARROW){
+  } else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
-  }else if (key == ' '){
+  } else if (key == ' ') {
     player.direction = 'still'
   }
 }
@@ -70,10 +70,10 @@ function title() {
   textFont('Futura');
   fill(255);
   textAlign(CENTER);
-  text('Your GAME', w/2, h/5);
+  text('Your GAME', w / 2, h / 5);
 
   textSize(30);
-  text('click anywhere to start!', w/2, h/2);
+  text('click anywhere to start!', w / 2, h / 2);
 }
 
 function titleMouseClicked() {
@@ -90,30 +90,40 @@ function level1() {
 
   coin.display();
   coin.move();
+
+  //check for collision, if there is a collision increase points by 1
+  if (dist(player.x, player.y, coin.x, coin.y) <= (player.r + coin.r) / 2) {
+    points++;
+    console.log(points);
+  }
+  text(`pOiNtS: ${points}`, w / 7, h / 15);
+
 }
 
 function level1MouseClicked() {
-  points++;
-  //points += 1;
-  //points = points + 1;
-  console.log('points = ' + points);
-  if (points >= 10){
-    state = 'you win';
-  }
+  // points++;
+  // //points += 1;
+  // //points = points + 1;
+  // console.log('points = ' + points);
+  // if (points >= 10){
+  //   state = 'you win';
+  // }
+
+
 }
 
-function youWin(){
+function youWin() {
   background(206, 75, 242);
   textSize(80);
   textFont('Futura');
   stroke(255);
-  text('You WIN!', w/2, h/2);
+  text('You WIN!', w / 2, h / 2);
 
   textSize(30);
-  text('click anywhere to restart!', w/2, h *3/4);
+  text('click anywhere to restart!', w / 2, h * 3 / 4);
 }
 
-function youWinMouseClicked(){
+function youWinMouseClicked() {
   state = 'level 1';
   points = 0;
 }
