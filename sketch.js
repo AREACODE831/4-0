@@ -7,6 +7,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
+let coin;
 
 function setup() {
   cnv = createCanvas(w, h);
@@ -14,6 +15,7 @@ function setup() {
   textFont('Futura');
 
   player = new Player();
+  coin = new Coin();
 
 }
 
@@ -72,6 +74,8 @@ function level1() {
   //text('click for points', w/2, h - 30);
 
   player.display();
+  coin.display();
+  coin.move();
 }
 
 function level1MouseClicked() {
