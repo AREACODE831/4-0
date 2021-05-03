@@ -71,7 +71,7 @@ function title() {
   textFont('Futura');
   fill(255);
   textAlign(CENTER);
-  text('Your GAME', w / 2, h / 5);
+  text('Rabbit Hole', w / 2, h / 5);
 
   textSize(30);
   text('click anywhere to start!', w / 2, h / 2);
