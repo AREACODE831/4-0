@@ -8,9 +8,12 @@ let w = 600;
 let h = 600;
 let player;
 let coins = [];
+//let bg;
+
 
 function setup() {
   cnv = createCanvas(w, h);
+  //bg = loadImage('asset/hole.jpg');
 
   textFont('Futura');
 
@@ -21,6 +24,7 @@ function setup() {
 }
 
 function draw() {
+//background(bg);
 
   switch (state) {
     case 'title':
