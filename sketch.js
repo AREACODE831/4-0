@@ -70,7 +70,7 @@ function keyPressed() {
 }
 
 function title() {
-  background(242, 205, 94);
+  background(184, 119, 232);
   textSize(80);
   textFont('Futura');
   fill(255);
@@ -90,13 +90,15 @@ function level1() {
   background(107, 242, 217);
   //text('click for points', w/2, h - 30);
 
-  if(random[1] <= 0.01){
+  if (random(1) <= 0.01){
     coins.push(new Coin());
   }
 
   player.display();
   player.move();
 
+  // coins[0].display();
+  // coins[0].move();
 
   for (let i = 0; i < coins.length; i++){
     coins[i].display();
